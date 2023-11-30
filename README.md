@@ -7,7 +7,7 @@ Original author: [lisiyao21](https://github.com/lisiyao2)
 Download the data and models as described in the original project.
 
 ## Fork Improvements
-This fork addresses some major issues found in the original project and allow the testing code run correctly(hopefully). It can generate the inbetweening result now with trigging any error.
+This fork addresses some major issues found in the original project and allows the testing code run smoothly(hopefully). It can generate the inbetweening result now without triggering any errors. 
 
 ## Usage
 ```python
