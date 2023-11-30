@@ -5,6 +5,8 @@ import cv2
 
 
 def visvid(dict, inter_frames=1):
+    print(dict.keys())
+    print(dict)
     img1 = ((dict['image0'][0].permute(1, 2, 0).float().numpy() + 1.0) * 255 / 2).astype(np.uint8).copy()
     img2 = ((dict['image1'][0].permute(1, 2, 0).float().numpy() + 1.0) * 255 / 2).astype(np.uint8).copy()
 
@@ -14,9 +16,9 @@ def visvid(dict, inter_frames=1):
     source0 = dict['keypoints0'][0].cpu().numpy()
     source2 = dict['keypoints1'][0].cpu().numpy()
  
-    source0_topo = dict['ntopo0'][0]
+    source0_topo = dict['topo0'][0]
 
-    source2_topo = dict['ntopo1'][0]
+    source2_topo = dict['topo1'][0]
     ori_source0_topo = dict['topo0'][0]
 
     ori_source2_topo = dict['topo1'][0]

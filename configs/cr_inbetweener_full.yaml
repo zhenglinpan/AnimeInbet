@@ -38,6 +38,18 @@ data:
         mode: 'eval'
         use_vs: False
 
+video:
+    root: 'data/ml100_norm/'
+    batch_size: 1
+    gap: 5
+    type: 'all'
+    model: None
+    action: None
+    mode: 'eval'
+    use_vs: False
+
+inter_frames: 1
+
 testing:
     ckpt_epoch: 20
     

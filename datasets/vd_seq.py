@@ -69,7 +69,7 @@ class VideoLinSeq(data.Dataset):
 
             for i in range(len(label_list) - 1):
                 self.label_list += [ [label_list[jj] for jj in range(i, i + 2)] ]
-                self.image_list += [ [label_list[jj].replace('labels', 'frames').replace('.json', '.png') for jj in range(i, i + 2)] ]
+                self.image_list += [ [label_list[jj].replace('Line', 'Image').replace('labels', 'frames').replace('.json', '.png') for jj in range(i, i + 2)] ]
 
         # print(clip)
         print('Len of Frame is ', len(self.image_list), flush=True)
@@ -83,9 +83,12 @@ class VideoLinSeq(data.Dataset):
         folder0 = self.label_list[index][0][:-4].split('/')[-2]
         folder1 = self.label_list[index][-1][:-4].split('/')[-2]
 
-
-        imgt = [cv2.imread(self.image_list[index][ii]) for ii in range(0, len(self.image_list[index]))]
-
+        imgt = []
+        for ii in range(0, len(self.image_list[index])):
+            # print('-------------------------------', self.image_list[index][ii])
+            mat = cv2.imread(self.image_list[index][ii])
+            imgt.append(mat)
+            
         labelt = []
         for ii in range(0, len(self.label_list[index])):
             v, t, id = read_json(self.label_list[index][ii])

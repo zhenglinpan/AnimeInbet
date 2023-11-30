@@ -400,7 +400,8 @@ class DraftRefine():
         if not(hasattr(config, 'need_not_test_data') and config.need_not_train_data):      
             self._build_test_loader()
         if hasattr(config, 'gen_video') and config.gen_video:
-            self._build_video_loader()
+            pass
+        self._build_video_loader()
         self._build_optimizer()
 
     def _build_model(self):
